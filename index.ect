@@ -40,9 +40,7 @@
 	</header>
 	<div id="wrapper">
 		<div id="main">
-			<a href="/">
-				<img src="<%= @media.storage == 'local' && @upload(@media) || @media.path %>" class="main picture" alt="TopGirls VIP - Picture <%= @media.alias %>">
-			</a>
+			<img src="<%= @media.storage == 'local' && @upload(@media) || @media.path %>" class="main picture" alt="TopGirls VIP - Picture <%= @media.alias %>">
 			<a href="<%= @prev %>" class="picture nav prev large monitor only">
 				<img src="<%= @asset('/img/left-arrow.png') %>" alt="Prev">
 			</a>
