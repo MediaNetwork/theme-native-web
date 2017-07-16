@@ -31,6 +31,10 @@
 		display: none !important;
 	}
 
+	#header {
+		background: black;
+	}
+
 	#sidebar {
 		position: absolute;
 		top: 0;
