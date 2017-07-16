@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title><%= @settings['page_title'] %></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Favicon -->
+	<% include 'favicon' %>
+	<!-- FB meta -->
+	<% include 'fb-meta' %>
+
+	<link rel="prev" title="Previous" href="<%= @prev %>">
+	<link rel="next" title="Next" href="<%= @next %>">
+
+	<script>
+	</script>
+
+	<link rel="stylesheet" href="<%= @asset('/css/reset.css') %>">
+	<link rel="stylesheet" href="<%= @asset('/css/spn.css') %>">
+	<link rel="stylesheet" href="<%= @asset('/css/style.css') %>">
+	<link rel="stylesheet" href="<%= @asset('/css/responsive.css') %>">
+
+	<% if @config.production && @settings['ci_header']: %>
+		<%- @settings['ci_header'] %>
+	<% end %>
+</head>
+<body>
+	<header id="header" class="cf">
+		<div id="logo" class="large monitor only">
+			<a href="/" class="brand-logo" title="<%= @settings['page_title'] || 'Media Feed' %>">
+				<img src="<%= @asset('/img/logo.png') %>" alt="<%= @settings['page_title'] || 'Image Feed' %>">
+			</a>
+		</div>
+		<div class="header ad">
+			<% if @config.production: %>
+				<% include 'partials/ad-header' %>
+			<% end %>
+		</div>
+	</header>
+	<div id="wrapper">
+		<div id="main">
+			<a href="/">
+				<img src="<%= @media.storage == 'local' && @upload(@media) || @media.path %>" class="main picture" alt="TopGirls VIP - Picture <%= @media.alias %>">
+			</a>
+			<a href="<%= @prev %>" class="picture nav prev large monitor only">
+				<img src="<%= @asset('/img/left-arrow.png') %>" alt="Prev">
+			</a>
+			<a href="<%= @next %>" class="picture nav next large monitor only">
+				<img src="<%= @asset('/img/right-arrow.png') %>" alt="Next">
+			</a>
+		</div>
+		<aside id="sidebar">
+			<div class="sidebar section">
+				<div class="text nav">
+					<a href="<%= @prev %>">&lt; Prev</a>
+					<a href="/">Random</a>
+					<a href="<%= @next %>">Next &gt;</a>
+				</div>
+			</div>
+			<div class="sidebar section">
+				<% include 'partials/fb-page' %>
+			</div>
+			<div class="sidebar section">
+				<% include 'partials/fb-like-share' %>
+			</div>
+			<div class="sidebar section ad">
+				<% if @config.production: %>
+					<% include 'partials/ad-sidebar' %>
+				<% end %>
+			</div>
+			<div class="sidebar section">
+				<% include 'partials/fb-comment' %>
+			</div>
+		</aside>
+	</div>
+	<section id="footer">
+		<span class="copyright">&copy; 2017</span>
+		<span class="powered by">Powered by <a href="https://github.com/MediaSocialNetwork">MediaSocialNetwork</a></span>
+	</section>
+
+	<script type="text/javascript" src="<%= @asset('/js/spn.min.js') %>"></script>
+	<script src="<%= @asset('/js/app.js') %>"></script>
+	<% if @settings['ci_footer']: %>
+		<%- @settings['ci_footer'] %>
+	<% end %>
+</body>
+</html>
