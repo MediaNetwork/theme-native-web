@@ -1,0 +1,13 @@
+{
+  "name": "native-web-media-feed",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:longlh/native-web-media-feed.git",
+  "author": "LongLH <d@dapps.me>",
+  "license": "MIT",
+  "dependencies": {
+    "grunt": "1.0.1",
+    "grunt-contrib-cssmin": "2.2.0",
+    "load-grunt-tasks": "3.5.2"
+  }
+}

@@ -12,15 +12,16 @@
 	<link rel="prev" title="Previous" href="<%= @prev %>">
 	<link rel="next" title="Next" href="<%= @next %>">
 
-	<script>
-	</script>
+	<% if @config.production: %>
+		<link rel="stylesheet" href="<%= @asset('/css/theme.min.css') %>">
+	<% else: %>
+		<link rel="stylesheet" href="<%= @asset('/css/reset.css') %>">
+		<link rel="stylesheet" href="<%= @asset('/css/spn.css') %>">
+		<link rel="stylesheet" href="<%= @asset('/css/style.css') %>">
+		<link rel="stylesheet" href="<%= @asset('/css/responsive.css') %>">
+	<% end %>
 
-	<link rel="stylesheet" href="<%= @asset('/css/reset.css') %>">
-	<link rel="stylesheet" href="<%= @asset('/css/spn.css') %>">
-	<link rel="stylesheet" href="<%= @asset('/css/style.css') %>">
-	<link rel="stylesheet" href="<%= @asset('/css/responsive.css') %>">
-
-	<% if @config.production && @settings['ci_header']: %>
+	<% if @settings['ci_header']: %>
 		<%- @settings['ci_header'] %>
 	<% end %>
 </head>
@@ -79,7 +80,6 @@
 	</section>
 
 	<script type="text/javascript" src="<%= @asset('/js/spn.min.js') %>"></script>
-	<script src="<%= @asset('/js/app.js') %>"></script>
 	<% if @settings['ci_footer']: %>
 		<%- @settings['ci_footer'] %>
 	<% end %>
