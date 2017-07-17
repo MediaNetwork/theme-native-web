@@ -24,10 +24,9 @@ html, body {
 }
 
 #header .header.ad {
-	float: right;
-	margin-right: 5px;
 	height: 100px;
-	min-width: 1px
+	width: 320px;
+	margin: 0 auto;
 }
 
 #wrapper {
@@ -70,9 +69,8 @@ html, body {
 }
 
 #sidebar .sidebar.section {
-	padding-left: 5px;
-	padding-right: 5px;
-	padding-bottom: 5px;
+	margin: 5px;
+	overflow: hidden;
 }
 
 #sidebar .siderbar.ad {

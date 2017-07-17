@@ -35,6 +35,11 @@
 		background: black;
 	}
 
+	#header .header.ad {
+		float: right;
+		margin-right: 5px;
+	}
+
 	#sidebar {
 		position: absolute;
 		top: 0;
