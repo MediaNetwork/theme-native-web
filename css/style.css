@@ -5,6 +5,7 @@ img {
 html, body {
 	position: relative;
 	font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace;
+	overflow-x: hidden;
 }
 
 #header {
