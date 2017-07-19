@@ -10,7 +10,7 @@ html, body {
 
 #header {
 	padding-top: 10px;
-	padding-left: 10px;
+	padding-bottom: 10px;
 	background: url('/img/logo.png') center center no-repeat;
 	background-color: black;
 }
