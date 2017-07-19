@@ -9,7 +9,8 @@ html, body {
 }
 
 #header {
-	padding: 10px;
+	padding-top: 10px;
+	padding-left: 10px;
 	background: url('/img/logo.png') center center no-repeat;
 	background-color: black;
 }
