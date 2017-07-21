@@ -41,14 +41,15 @@
 	}
 
 	#sidebar {
-		position: absolute;
-		top: 0;
-		right: 0;
 		width: 410px;
+		flew-grow: 0;
+	}
+
+	#wrapper {
+		flex-direction: row;
 	}
 
 	#main {
-		margin-right: 410px;
 		padding: 0;
 	}
 }
