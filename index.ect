@@ -21,7 +21,7 @@
 		<link rel="stylesheet" href="<%= @asset('/css/responsive.css') %>">
 	<% end %>
 
-	<% if @settings['ci_header']: %>
+	<% if @settings['ci_header'] && @config.production: %>
 		<%- @settings['ci_header'] %>
 	<% end %>
 </head>
@@ -40,7 +40,16 @@
 	</header>
 	<div id="wrapper">
 		<div id="main">
-			<img src="<%= @media.storage == 'local' && @upload(@media) || @media.path %>" class="main picture" alt="TopGirls VIP - Picture <%= @media.alias %>">
+			<div id="media" class="media placeholder"
+				style="max-width: <%= @media.width %>px;"
+				data-large="<%= @media.path %>">
+				<img id="media-preview" src="<%= @media.preview %>" class="media preview loaded">
+				<noscript>
+					<img src="<%= @media.storage == 'local' && @upload(@media) || @media.path %>" class="main picture loaded" alt="TopGirls VIP - Picture <%= @media.alias %>">
+				</noscript>
+				<div style="padding-bottom: <%= @ratio %>;"></div>
+			</div>
+
 			<a href="<%= @prev %>" class="picture nav prev large monitor only">
 				<img src="<%= @asset('/img/left-arrow.png') %>" alt="Prev">
 			</a>
@@ -80,9 +89,15 @@
 		<span class="powered by">Powered by <a href="https://github.com/MediaSocialNetwork">MediaSocialNetwork</a></span>
 	</section>
 
-	<script type="text/javascript" src="<%= @asset('/js/spn.min.js') %>"></script>
-	<% if @settings['ci_footer']: %>
-		<%- @settings['ci_footer'] %>
+	<% if @config.production: %>
+		<script src="<%= @asset('/js/theme.min.js') %>"></script>
+		<% if @settings['ci_footer']: %>
+			<%- @settings['ci_footer'] %>
+		<% end %>
+	<% else: %>
+		<script src="<%= @asset('/js/jquery-1.12.4.min.js') %>"></script>
+		<script src="<%= @asset('/js/spn.min.js') %>"></script>
+		<script src="<%= @asset('/js/app.js') %>"></script>
 	<% end %>
 </body>
 </html>

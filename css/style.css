@@ -102,10 +102,27 @@ html, body {
 	text-align: right;
 }
 
-.main.picture {
-	max-width: 100%;
-	display: block;
+.media.placeholder {
 	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.media.placeholder img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	opacity: 0;
+	transition: opacity .3s linear;
+}
+.media.placeholder img.loaded {
+	opacity: 1;
+}
+
+.media.placeholder .media.preview {
+	filter: blur(20px);
+	transform: scale(1);
 }
 
 .text.nav {
