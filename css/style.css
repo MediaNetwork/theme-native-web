@@ -139,3 +139,43 @@ html, body {
 	text-align: center;
 	padding: 20px;
 }
+
+.vote li {
+	display: inline-block;
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.vote li:hover {
+	border-color: #999;
+}
+
+.btn-vote {
+	background-image: url('/img/vote-icon.png');
+	background-repeat: no-repeat;
+	width: 17px;
+	height: 20px;
+	display: block;
+	position: relative;
+}
+
+.btn-vote-down {
+	background-position: -5px -5px;
+}
+
+.btn-vote-down-active {
+	background-position: -32px -5px;
+}
+
+.btn-vote-up {
+	background-position: -59px -5px;
+}
+
+.btn-vote-up-active {
+	background-position: -86px -5px;
+}
+.vote-results {
+	margin-bottom: 10px;
+}

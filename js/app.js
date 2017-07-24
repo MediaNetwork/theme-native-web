@@ -17,4 +17,29 @@ $('#media').one('load', function() {
 	if(this.complete) {
 		$(this).load();
 	}
-});;
+});
+
+$(document).ready(function() {
+	var $voteUp = $('#btn-vote-up');
+	var $voteDown = $('#btn-vote-down');
+
+	$voteUp.click(function() {
+		$.post('/vote', {
+			mediaId: window.GLOBAL.mediaId,
+			type: 'like',
+		})
+		.done(function(data) {
+			window.location = window.GLOBAL.next;
+		})
+	});
+
+	$voteDown.click(function() {
+		$.post('/vote', {
+			mediaId: window.GLOBAL.mediaId,
+			type: 'dislike',
+		})
+		.done(function(data) {
+			window.location = window.GLOBAL.next;
+		});
+	});
+});

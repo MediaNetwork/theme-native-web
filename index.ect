@@ -70,6 +70,9 @@
 				<% include 'partials/fb-page' %>
 			</div>
 			<div class="sidebar section">
+				<% include 'partials/vote' %>
+			</div>
+			<div class="sidebar section">
 				<% include 'partials/fb-like-share' %>
 			</div>
 			<div class="sidebar section">
@@ -90,6 +93,13 @@
 		<span class="powered by">Powered by <a href="https://github.com/MediaSocialNetwork">MediaSocialNetwork</a></span>
 	</section>
 
+	<script>
+	<!--
+		window.GLOBAL = window.GLOBAL || {};
+		window.GLOBAL.mediaId = '<%= @media._id %>';
+		window.GLOBAL.next = '<%= @next %>';
+	-->
+	</script>
 	<% if @config.production: %>
 		<script src="<%= @asset('/js/theme.min.js') %>"></script>
 		<% if @settings['ci_footer']: %>
