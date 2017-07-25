@@ -140,6 +140,10 @@ html, body {
 	padding: 20px;
 }
 
+.vote {
+	text-align: center;
+}
+
 .vote li {
 	display: inline-block;
 	padding: 5px 10px;
@@ -178,4 +182,5 @@ html, body {
 }
 .vote-results {
 	margin-bottom: 10px;
+	text-align: center;
 }
