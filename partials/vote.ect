@@ -1,0 +1,15 @@
+<% if @mediaScore: %>
+<div class="vote-results">
+	<%= @mediaScore.score %> points
+</div>
+<% end %>
+<div class="vote">
+	<ul>
+		<li id="btn-vote-up" title="Like">
+			<span class="btn-vote btn-vote-up"></span>
+		</li>
+		<li id="btn-vote-down" title="Dislike">
+			<span class="btn-vote btn-vote-down"></span>
+		</li>
+	</ul>
+</div>
