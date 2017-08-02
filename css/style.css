@@ -86,6 +86,12 @@ html, body {
 	overflow: hidden;
 }
 
+#sidebar .sidebar.ref img {
+	width: 100%;
+	max-width: 100%;
+	min-width: 100%;
+}
+
 #sidebar .sidebar.ad {
 	min-height: 1px;
 	margin-left: auto;
