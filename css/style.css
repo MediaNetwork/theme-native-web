@@ -93,10 +93,11 @@ html, body {
 }
 
 #sidebar .sidebar.ad {
-	min-height: 1px;
+	height: 250px;
 	margin-left: auto;
 	margin-right: auto;
 	width: 300px;
+	overflow: hidden;
 }
 
 #footer {
