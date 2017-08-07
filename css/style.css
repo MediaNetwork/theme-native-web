@@ -116,10 +116,13 @@ html, body {
 	text-align: left;
 }
 
+#footer .powered.by a {
+	color: #82B1FF;
+}
+
 #footer .copyright {
 	float: right;
 	text-align: right;
-	color: #82B1FF;
 }
 
 .media.placeholder {
