@@ -89,6 +89,7 @@
 		<span class="powered by">Powered by <a href="https://github.com/MediaSocialNetwork">MediaSocialNetwork</a></span>
 	</section>
 
+	<div id="fb-root"></div>
 	<% if @config.production: %>
 		<script defer src="<%= @asset('/js/theme.min.js') %>"></script>
 		<% if @settings['ci_footer']: %>

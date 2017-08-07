@@ -21,6 +21,9 @@ module.exports = function(grunt) {
 						'js/jquery-1.12.4.min.js',
 						'js/spn.min.js',
 						'js/app.js'
+					],
+					'js/social.min.js': [
+						'js/social.js'
 					]
 				}
 			}
