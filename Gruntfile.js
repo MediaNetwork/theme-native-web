@@ -13,8 +13,19 @@ module.exports = function(grunt) {
 					]
 				}
 			}
+		},
+		uglify: {
+			prod: {
+				files: {
+					'js/theme.min.js': [
+						'js/jquery-1.12.4.min.js',
+						'js/spn.min.js',
+						'js/app.js'
+					]
+				}
+			}
 		}
 	});
 
-	grunt.registerTask('prod', ['cssmin']);
+	grunt.registerTask('prod', ['cssmin', 'uglify']);
 };

@@ -29,17 +29,24 @@ html, body {
 	height: 100px;
 	width: 320px;
 	margin: 0 auto;
+	overflow: hidden;
 }
 
 #wrapper {
 	padding-top: 5px;
 	padding-bottom: 45px;
-	position: relative;
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	flex-direction: column;
 }
 
 #main {
 	position: relative;
 	min-height: 50px;
+	flex-grow: 1;
 }
 
 #main .picture.nav {
@@ -48,7 +55,11 @@ html, body {
 	bottom: 0;
 	width: 100px;
 	text-align: center;
-	display: flex;
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
 	align-items: center;
 	justify-content: center;
 }
@@ -75,8 +86,16 @@ html, body {
 	overflow: hidden;
 }
 
-#sidebar .siderbar.ad {
+#sidebar .sidebar.ref img {
+	width: 100%;
+	max-width: 100%;
+	min-width: 100%;
+}
+
+#sidebar .sidebar.ad {
 	min-height: 1px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #footer {
@@ -102,10 +121,27 @@ html, body {
 	text-align: right;
 }
 
-.main.picture {
-	max-width: 100%;
-	display: block;
+.media.placeholder {
 	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.media.placeholder img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	opacity: 0;
+	transition: opacity .3s linear;
+}
+.media.placeholder img.loaded {
+	opacity: 1;
+}
+
+.media.placeholder .media.preview {
+	filter: blur(20px);
+	transform: scale(1);
 }
 
 .text.nav {
