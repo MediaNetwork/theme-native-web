@@ -16,4 +16,8 @@ $(window).one('load', function() {
 	window.FB_APP_ID = id;
 
 	$.getScript('/js/social.min.js', function() {});
-})
+});
+
+if (typeof LazyWrite !== 'undefined') {
+	setTimeout(LazyWrite.process, 1e3);
+}
