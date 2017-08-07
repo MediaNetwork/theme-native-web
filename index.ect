@@ -22,6 +22,7 @@
 	<% end %>
 
 	<% if @settings['ci_header'] && @config.production: %>
+		<script src="<%= @asset('/js/lazywrite.min.js') %>"></script>
 		<%- @settings['ci_header'] %>
 	<% end %>
 </head>
