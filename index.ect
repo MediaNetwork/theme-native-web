@@ -43,7 +43,7 @@
 			<div id="media-placeholder" class="media placeholder"
 				style="max-width: <%= @media.width %>px;">
 				<img id="media-preview" src="<%= @media.preview %>" class="media preview loaded">
-				<img id="media" src="<%= @media.storage == 'local' && @upload(@media) || @media.path %>" class="main picture" alt="TopGirls VIP - Picture <%= @media.alias %>" alt="TopGirls VIP - Picture <%= @media.alias %>">
+				<img id="media" src="<%= @media.storage == 'local' && @upload(@media) || @media.path %>" class="main picture" alt="TopGirls VIP - Picture <%= @media.alias %>">
 				<noscript>
 					<img src="<%= @media.storage == 'local' && @upload(@media) || @media.path %>" class="main picture loaded" alt="TopGirls VIP - Picture <%= @media.alias %>">
 				</noscript>
