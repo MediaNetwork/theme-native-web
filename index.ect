@@ -90,14 +90,14 @@
 	</section>
 
 	<% if @config.production: %>
-		<script src="<%= @asset('/js/theme.min.js') %>"></script>
+		<script defer src="<%= @asset('/js/theme.min.js') %>"></script>
 		<% if @settings['ci_footer']: %>
 			<%- @settings['ci_footer'] %>
 		<% end %>
 	<% else: %>
-		<script src="<%= @asset('/js/jquery-1.12.4.min.js') %>"></script>
-		<script src="<%= @asset('/js/spn.min.js') %>"></script>
-		<script src="<%= @asset('/js/app.js') %>"></script>
+		<script defer src="<%= @asset('/js/jquery-1.12.4.min.js') %>"></script>
+		<script defer src="<%= @asset('/js/spn.min.js') %>"></script>
+		<script defer src="<%= @asset('/js/app.js') %>"></script>
 	<% end %>
 </body>
 </html>
