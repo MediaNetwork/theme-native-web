@@ -41,10 +41,9 @@
 	<div id="wrapper">
 		<div id="main">
 			<div id="media-placeholder" class="media placeholder"
-				style="max-width: <%= @media.width %>px;"
-				data-large="<%= @media.path %>">
+				style="max-width: <%= @media.width %>px;">
 				<img id="media-preview" src="<%= @media.preview %>" class="media preview loaded">
-				<img id="media" src="<%= @media.storage == 'local' && @upload(@media) || @media.path %>" class="main picture" alt="TopGirls VIP - Picture <%= @media.alias %>">
+				<img id="media" src="<%= @media.storage == 'local' && @upload(@media) || @media.path %>" class="main picture" alt="TopGirls VIP - Picture <%= @media.alias %>" alt="TopGirls VIP - Picture <%= @media.alias %>">
 				<noscript>
 					<img src="<%= @media.storage == 'local' && @upload(@media) || @media.path %>" class="main picture loaded" alt="TopGirls VIP - Picture <%= @media.alias %>">
 				</noscript>
@@ -76,7 +75,7 @@
 				<% include 'partials/fb-comment' %>
 			</div>
 			<div class="sidebar section ref">
-				<a href="http://propellerads.com/?rfd=TwG1"><img src="http://promo.propellerads.com/468x60-popads_1.gif" alt="Propellerads"></a>
+				<a href="//propellerads.com/?rfd=TwG1"><img src="//promo.propellerads.com/468x60-popads_1.gif" alt="Propellerads"></a>
 			</div>
 			<div class="sidebar section ad">
 				<% if @config.production: %>
