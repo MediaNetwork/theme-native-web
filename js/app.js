@@ -6,7 +6,7 @@ $('#media').one('load', function() {
 	}
 });;
 
-$(window).one('load', function() {
+setTimeout(function() {
 	var id = $('meta[property="fb:app_id"]').attr('content');
 
 	if (!id) {
@@ -16,11 +16,7 @@ $(window).one('load', function() {
 	window.FB_APP_ID = id;
 
 	$.getScript('/js/social.min.js', function() {});
-});
-
-if (typeof LazyWrite !== 'undefined') {
-	setTimeout(LazyWrite.process, 1e3);
-}
+}, 2e3);
 
 if ('serviceWorker' in navigator) {
 	window.addEventListener('load', function() {
