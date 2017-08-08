@@ -7,6 +7,7 @@
  "theme_color": "#000000",
  "orientation": "portrait-primary",
  "description": "TopGirls VIP has the best beautiful pics on the Internet!!!",
+ "start_url": "https://topgirls.vip",
  "icons": [
   {
    "src": "\/img\/fav\/android-icon-36x36.png",
