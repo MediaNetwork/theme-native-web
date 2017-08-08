@@ -4,6 +4,11 @@
 	<title>TopGirls VIP - Picture <%= @media.alias %></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<!-- Progressive Web -->
+	<link rel="manifest" href="<%= @asset('/js/manifest.json') %>">
+	<meta name="msapplication-TileColor" content="#000000">
+	<meta name="theme-color" content="#000000">
+
 	<!-- Favicon -->
 	<% include 'partials/favicon' %>
 	<!-- FB meta -->
