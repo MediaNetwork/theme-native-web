@@ -16,7 +16,7 @@ setTimeout(function() {
 	window.FB_APP_ID = id;
 
 	$.getScript('/js/social.min.js', function() {});
-}, 2e3);
+}, 1e3);
 
 if ('serviceWorker' in navigator) {
 	window.addEventListener('load', function() {
