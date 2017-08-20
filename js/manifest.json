@@ -1,5 +1,13 @@
 {
- "name": "App",
+ "lang": "en-US",
+ "short_name": "TopGirls",
+ "name": "TopGirls VIP",
+ "display": "standalone",
+ "background_color": "#000000",
+ "theme_color": "#000000",
+ "orientation": "portrait-primary",
+ "description": "TopGirls VIP has the best beautiful pics on the Internet!!!",
+ "start_url": "/",
  "icons": [
   {
    "src": "\/img\/fav\/android-icon-36x36.png",
