@@ -21,7 +21,7 @@
 		<link rel="stylesheet" href="<%= @asset('/css/responsive.css') %>">
 	<% end %>
 
-	<% if @settings['ci_header'] && @config.production: %>
+	<% if @settings['ci_header']: %>
 		<%- @settings['ci_header'] %>
 	<% end %>
 </head>
@@ -92,13 +92,14 @@
 	<div id="fb-root"></div>
 	<% if @config.production: %>
 		<script defer src="<%= @asset('/js/theme.min.js') %>"></script>
-		<% if @settings['ci_footer']: %>
-			<%- @settings['ci_footer'] %>
-		<% end %>
 	<% else: %>
 		<script defer src="<%= @asset('/js/jquery-1.12.4.min.js') %>"></script>
 		<script defer src="<%= @asset('/js/spn.min.js') %>"></script>
 		<script defer src="<%= @asset('/js/app.js') %>"></script>
+	<% end %>
+
+	<% if @settings['ci_footer']: %>
+		<%- @settings['ci_footer'] %>
 	<% end %>
 </body>
 </html>

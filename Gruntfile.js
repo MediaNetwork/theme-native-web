@@ -24,6 +24,9 @@ module.exports = function(grunt) {
 					],
 					'js/social.min.js': [
 						'js/social.js'
+					],
+					'js/sw.min.js': [
+						'js/sw.js'
 					]
 				}
 			}
