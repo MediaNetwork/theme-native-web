@@ -16,7 +16,7 @@ setTimeout(function() {
 	window.FB_APP_ID = id;
 
 	$.getScript('/js/social.min.js', function() {});
-}, 1e3);
+}, 500);
 
 // Mobile Safari in standalone mode
 if(('standalone' in window.navigator) && window.navigator.standalone){
@@ -42,7 +42,7 @@ if(('standalone' in window.navigator) && window.navigator.standalone){
 
 if ('serviceWorker' in navigator) {
 	window.addEventListener('load', function() {
-		navigator.serviceWorker.register('/sw.min.js').then(function(registration) {
+		navigator.serviceWorker.register('/sw.js').then(function(registration) {
 			// Registration was successful
 			console.log('ServiceWorker registration successful with scope: ', registration.scope);
 		}, function(err) {

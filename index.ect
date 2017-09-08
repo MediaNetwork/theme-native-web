@@ -45,7 +45,7 @@
 		</div>
 		<div class="header ad">
 			<% if @config.production: %>
-				<% include 'partials/ad-header' %>
+				<% include 'partials/adsense-ad-header' %>
 			<% end %>
 		</div>
 	</header>
@@ -76,6 +76,11 @@
 					<a href="<%= @next %>">Next &gt;</a>
 				</div>
 			</div>
+			<div class="sidebar section ad">
+				<% if @config.production: %>
+					<% include 'partials/amazon-ad-sidebar' %>
+				<% end %>
+			</div>
 			<div class="sidebar section">
 				<% include 'partials/fb-page' %>
 			</div>
@@ -90,7 +95,7 @@
 			</div> -->
 			<div class="sidebar section ad">
 				<% if @config.production: %>
-					<% include 'partials/ad-sidebar' %>
+					<% include 'partials/adsense-ad-sidebar' %>
 				<% end %>
 			</div>
 		</aside>
