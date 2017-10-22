@@ -1,104 +1,53 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<title><%= @settings['page_title'] %></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- Favicon -->
-	<% include 'favicon' %>
-	<!-- FB meta -->
-	<% include 'fb-meta' %>
-
-	<link rel="prev" title="Previous" href="<%= @prev %>">
-	<link rel="next" title="Next" href="<%= @next %>">
-
+<% extend 'layout.ect' %>
+<% block 'title': %>
+	TopGirls VIP - Most beautiful and sexy girls
+<% end %>
+<% block 'scripts': %>
 	<% if @config.production: %>
-		<link rel="stylesheet" href="<%= @asset('/css/theme.min.css') %>">
+		<script defer src="<%= @asset('/js/theme.min.js') %>"></script>
 	<% else: %>
-		<link rel="stylesheet" href="<%= @asset('/css/reset.css') %>">
-		<link rel="stylesheet" href="<%= @asset('/css/spn.css') %>">
-		<link rel="stylesheet" href="<%= @asset('/css/style.css') %>">
-		<link rel="stylesheet" href="<%= @asset('/css/responsive.css') %>">
+		<script defer src="<%= @asset('/js/jquery-1.12.4.min.js') %>"></script>
+		<script defer src="<%= @asset('/js/spn.min.js') %>"></script>
+		<script defer src="<%= @asset('/js/jquery.grid-a-licious.min.js') %>"></script>
+		<script defer src="<%= @asset('/js/home.js') %>"></script>
 	<% end %>
-
-	<% if @settings['ci_header'] && @config.production: %>
-		<%- @settings['ci_header'] %>
+<% end %>
+<div class="medias" id="medias">
+	<% for m in @media: %>
+		<div class="item">
+			<a title="TopGirls VIP - Picture <%= m.alias %>" href="/<%= m.alias %>">
+				<img src="<%= m.path %>" class="media" alt="TopGirls VIP - Picture <%= m.alias %>">
+			</a>
+		</div>
 	<% end %>
-</head>
-<body>
-	<header id="header" class="cf">
-		<div id="logo" class="large monitor only">
-			<a href="/" class="brand-logo" title="<%= @settings['page_title'] || 'Media Feed' %>">
-				<img src="<%= @asset('/img/logo.png') %>" alt="<%= @settings['page_title'] || 'Image Feed' %>">
-			</a>
+</div>
+<aside id="sidebar">
+	<div class="sidebar section">
+		<div class="text nav">
+			<a href="<%= @prev %>">&lt; Prev</a>
+			<a href="<%= @next %>">Next &gt;</a>
 		</div>
-		<div class="header ad">
-			<% if @config.production: %>
-				<% include 'partials/ad-header' %>
-			<% end %>
-		</div>
-	</header>
-	<div id="wrapper">
-		<div id="main">
-			<div id="media-placeholder" class="media placeholder"
-				style="max-width: <%= @media.width %>px;"
-				data-large="<%= @media.path %>">
-				<img id="media-preview" src="<%= @media.preview %>" class="media preview loaded">
-				<img id="media" src="<%= @media.storage == 'local' && @upload(@media) || @media.path %>" class="main picture" alt="TopGirls VIP - Picture <%= @media.alias %>">
-				<noscript>
-					<img src="<%= @media.storage == 'local' && @upload(@media) || @media.path %>" class="main picture loaded" alt="TopGirls VIP - Picture <%= @media.alias %>">
-				</noscript>
-				<div style="padding-bottom: <%= @ratio %>;"></div>
-			</div>
-
-			<a href="<%= @prev %>" class="picture nav prev large monitor only">
-				<img src="<%= @asset('/img/left-arrow.png') %>" alt="Prev">
-			</a>
-			<a href="<%= @next %>" class="picture nav next large monitor only">
-				<img src="<%= @asset('/img/right-arrow.png') %>" alt="Next">
-			</a>
-		</div>
-		<aside id="sidebar">
-			<div class="sidebar section">
-				<div class="text nav">
-					<a href="<%= @prev %>">&lt; Prev</a>
-					<a href="/">Random</a>
-					<a href="<%= @next %>">Next &gt;</a>
-				</div>
-			</div>
-			<div class="sidebar section">
-				<% include 'partials/fb-page' %>
-			</div>
-			<div class="sidebar section">
-				<% include 'partials/fb-like-share' %>
-			</div>
-			<div class="sidebar section">
-				<% include 'partials/fb-comment' %>
-			</div>
-			<div class="sidebar section">
-				<a href="http://propellerads.com/?rfd=TwG1"><img src="http://promo.propellerads.com/468x60-popads_1.gif" alt="Propellerads"></a>
-			</div>
-			<div class="sidebar section ad">
-				<% if @config.production: %>
-					<% include 'partials/ad-sidebar' %>
-				<% end %>
-			</div>
-		</aside>
 	</div>
-	<section id="footer">
-		<span class="copyright">&copy; 2017</span>
-		<span class="powered by">Powered by <a href="https://github.com/MediaSocialNetwork">MediaSocialNetwork</a></span>
-	</section>
-
-	<% if @config.production: %>
-		<script src="<%= @asset('/js/theme.min.js') %>"></script>
-		<% if @settings['ci_footer']: %>
-			<%- @settings['ci_footer'] %>
+	<div class="sidebar section ad">
+		<% if @config.production: %>
+			<% include 'partials/amazon-ad-sidebar' %>
 		<% end %>
-	<% else: %>
-		<script src="<%= @asset('/js/jquery-1.12.4.min.js') %>"></script>
-		<script src="<%= @asset('/js/spn.min.js') %>"></script>
-		<script src="<%= @asset('/js/app.js') %>"></script>
-	<% end %>
-</body>
-</html>
+	</div>
+	<div class="sidebar section">
+		<% include 'partials/fb-page' %>
+	</div>
+	<div class="sidebar section">
+		<% include 'partials/fb-like-share' %>
+	</div>
+	<div class="sidebar section">
+		<% include 'partials/fb-comment' %>
+	</div>
+	<!-- <div class="sidebar section ref">
+		<a href="//propellerads.com/?rfd=TwG1"><img src="//promo.propellerads.com/468x60-popads_1.gif" alt="Propellerads"></a>
+	</div> -->
+	<div class="sidebar section ad">
+		<% if @config.production: %>
+			<% include 'partials/adsense-ad-sidebar' %>
+		<% end %>
+	</div>
+</aside>

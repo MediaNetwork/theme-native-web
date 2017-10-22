@@ -1,0 +1,65 @@
+<% extend 'layout.ect' %>
+<% block 'title' : %>
+	TopGirls VIP - Picture <%= @media.alias %>
+<% end %>
+<% block 'fb-meta' : %>
+	<% include 'partials/fb-meta' %>
+<% end %>
+<% block 'scripts': %>
+	<% if @config.production: %>
+		<script defer src="<%= @asset('/js/theme-detail.min.js') %>"></script>
+	<% else: %>
+		<script defer src="<%= @asset('/js/jquery-1.12.4.min.js') %>"></script>
+		<script defer src="<%= @asset('/js/spn.min.js') %>"></script>
+		<script defer src="<%= @asset('/js/detail.js') %>"></script>
+	<% end %>
+<% end %>
+<div id="main">
+	<div id="media-placeholder" class="media placeholder"
+		style="max-width: <%= @media.width %>px;">
+		<img id="media-preview" src="<%= @media.preview %>" class="media preview loaded" alt="TopGirls VIP - Picture <%= @media.alias %>">
+		<img id="media" src="<%= @media.storage == 'local' && @upload(@media) || @media.path %>" class="main picture" alt="TopGirls VIP - Picture <%= @media.alias %>">
+		<noscript>
+			<img src="<%= @media.storage == 'local' && @upload(@media) || @media.path %>" class="main picture loaded" alt="TopGirls VIP - Picture <%= @media.alias %>">
+		</noscript>
+		<div style="padding-bottom: <%= @ratio %>;"></div>
+	</div>
+
+	<a href="<%= @prev %>" class="picture nav prev large monitor only">
+		<img src="<%= @asset('/img/left-arrow.png') %>" alt="Prev">
+	</a>
+	<a href="<%= @next %>" class="picture nav next large monitor only">
+		<img src="<%= @asset('/img/right-arrow.png') %>" alt="Next">
+	</a>
+</div>
+<aside id="sidebar">
+	<div class="sidebar section">
+		<div class="text nav">
+			<a href="<%= @prev %>">&lt; Prev</a>
+			<a href="/random" rel="nofollow">Random</a>
+			<a href="<%= @next %>">Next &gt;</a>
+		</div>
+	</div>
+	<div class="sidebar section ad">
+		<% if @config.production: %>
+			<% include 'partials/amazon-ad-sidebar' %>
+		<% end %>
+	</div>
+	<div class="sidebar section">
+		<% include 'partials/fb-page' %>
+	</div>
+	<div class="sidebar section">
+		<% include 'partials/fb-like-share' %>
+	</div>
+	<div class="sidebar section">
+		<% include 'partials/fb-comment' %>
+	</div>
+	<!-- <div class="sidebar section ref">
+		<a href="//propellerads.com/?rfd=TwG1"><img src="//promo.propellerads.com/468x60-popads_1.gif" alt="Propellerads"></a>
+	</div> -->
+	<div class="sidebar section ad">
+		<% if @config.production: %>
+			<% include 'partials/adsense-ad-sidebar' %>
+		<% end %>
+	</div>
+</aside>
