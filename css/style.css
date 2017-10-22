@@ -156,3 +156,7 @@ html, body {
 	text-align: center;
 	padding: 20px;
 }
+
+#medias {
+	opacity: 0;
+}

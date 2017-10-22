@@ -52,4 +52,8 @@
 	#main {
 		padding: 0;
 	}
+
+	#medias {
+		width: calc(100% - 410px);
+	}
 }
