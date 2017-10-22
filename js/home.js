@@ -1,9 +1,9 @@
 $(document).ready(function() {
-	var $medias = $('#medias');
+	var $media = $('#media-container');
 
-	$medias.css('opacity', 1);
+	$media.css('opacity', 1);
 
-	$medias.gridalicious({
+	$media.gridalicious({
 		gutter: 5,
 		width: 180,
 		animate: true,

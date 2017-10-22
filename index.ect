@@ -12,7 +12,7 @@
 		<script defer src="<%= @asset('/js/home.js') %>"></script>
 	<% end %>
 <% end %>
-<div class="medias" id="medias">
+<div class="media-container" id="media-container">
 	<% for m in @media: %>
 		<div class="item">
 			<a title="TopGirls VIP - Picture <%= m.alias %>" href="/<%= m.alias %>">
