@@ -20,13 +20,15 @@ module.exports = function(grunt) {
 					'js/media.min.js': [
 						'js/jquery-1.12.4.min.js',
 						'js/spn.min.js',
-						'js/media.js'
+						'js/media.js',
+						'js/social.js'
 					],
 					'js/list.min.js': [
 						'js/jquery-1.12.4.min.js',
 						'js/spn.min.js',
 						'js/jquery.grid-a-licious.min.js',
-						'js/list.js'
+						'js/list.js',
+						'js/social.js'
 					],
 					'js/social.min.js': [
 						'js/social.js'
