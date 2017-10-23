@@ -147,7 +147,7 @@ html, body {
 	opacity: 1;
 }
 
-.media.placeholder .media.preview {
+.media.preview {
 	filter: blur(20px);
 	transform: scale(1);
 }
@@ -159,4 +159,13 @@ html, body {
 
 #media-container {
 	opacity: 0;
+	transition: opacity .3s linear;
+}
+
+#media-container .item .media {
+	width: 100%;
+}
+
+#media-container .item {
+	overflow: hidden;
 }

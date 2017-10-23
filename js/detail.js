@@ -4,7 +4,7 @@ $('#media').one('load', function() {
 	if(this.complete) {
 		$(this).load();
 	}
-});;
+});
 
 setTimeout(function() {
 	var id = $('meta[property="fb:app_id"]').attr('content');

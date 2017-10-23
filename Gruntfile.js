@@ -30,8 +30,28 @@ module.exports = function(grunt) {
 					]
 				}
 			}
+		},
+		watch: {
+			scripts: {
+				files: [
+					'js/**/*.js',
+					'!js/theme.min.js',
+					'!js/social.min.js',
+					'!js/sw.min.js'
+				],
+				tasks: ['uglify'],
+			},
+			stylesheets: {
+				files: [
+					'css/**/*.css',
+					'!css/theme.min.css'
+				],
+				tasks: ['cssmin'],
+			},
 		}
 	});
+
+	grunt.registerTask('default', ['prod', 'watch']);
 
 	grunt.registerTask('prod', ['cssmin', 'uglify']);
 };
