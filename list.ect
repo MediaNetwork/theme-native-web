@@ -1,6 +1,9 @@
 <% extend 'layout.ect' %>
 <% block 'title': %>
-	TopGirls VIP - Most beautiful and sexy girls
+	TopGirls VIP - Page <%= @page %>
+<% end %>
+<% block 'fb-meta' : %>
+	<% include 'partials/list-fb-meta' %>
 <% end %>
 <% block 'scripts': %>
 	<% if @config.production: %>
