@@ -7,22 +7,22 @@
 <% end %>
 <% block 'scripts': %>
 	<% if @config.production: %>
-		<script defer src="<%= @asset('/js/theme-detail.min.js') %>"></script>
+		<script defer src="<%= @asset('/js/media.min.js') %>"></script>
 	<% else: %>
 		<script defer src="<%= @asset('/js/jquery-1.12.4.min.js') %>"></script>
 		<script defer src="<%= @asset('/js/spn.min.js') %>"></script>
-		<script defer src="<%= @asset('/js/detail.js') %>"></script>
+		<script defer src="<%= @asset('/js/media.js') %>"></script>
 	<% end %>
 <% end %>
 <div id="main">
 	<div id="media-placeholder" class="media placeholder"
 		style="max-width: <%= @media.width %>px;">
 		<img id="media-preview" src="<%= @media.preview %>" class="media preview loaded" alt="TopGirls VIP - Picture <%= @media.alias %>">
-		<img id="media" src="<%= @media.storage == 'local' && @upload(@media) || @media.path %>" class="main picture" alt="TopGirls VIP - Picture <%= @media.alias %>">
+		<img id="media" src="<%= @media.path %>" class="main picture" alt="TopGirls VIP - Picture <%= @media.alias %>">
 		<noscript>
-			<img src="<%= @media.storage == 'local' && @upload(@media) || @media.path %>" class="main picture loaded" alt="TopGirls VIP - Picture <%= @media.alias %>">
+			<img src="<%= @media.path %>" class="main picture loaded" alt="TopGirls VIP - Picture <%= @media.alias %>">
 		</noscript>
-		<div style="padding-bottom: <%= @ratio %>;"></div>
+		<div style="padding-bottom: <%= (@media.height / @media.width * 100) %>%;"></div>
 	</div>
 
 	<a href="<%= @prev %>" class="picture nav prev large monitor only">
@@ -54,9 +54,6 @@
 	<div class="sidebar section">
 		<% include 'partials/fb-comment' %>
 	</div>
-	<!-- <div class="sidebar section ref">
-		<a href="//propellerads.com/?rfd=TwG1"><img src="//promo.propellerads.com/468x60-popads_1.gif" alt="Propellerads"></a>
-	</div> -->
 	<div class="sidebar section ad">
 		<% if @config.production: %>
 			<% include 'partials/adsense-ad-sidebar' %>

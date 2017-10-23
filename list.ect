@@ -4,24 +4,20 @@
 <% end %>
 <% block 'scripts': %>
 	<% if @config.production: %>
-		<script defer src="<%= @asset('/js/theme.min.js') %>"></script>
+		<script defer src="<%= @asset('/js/list.min.js') %>"></script>
 	<% else: %>
 		<script defer src="<%= @asset('/js/jquery-1.12.4.min.js') %>"></script>
 		<script defer src="<%= @asset('/js/spn.min.js') %>"></script>
 		<script defer src="<%= @asset('/js/jquery.grid-a-licious.min.js') %>"></script>
-		<script defer src="<%= @asset('/js/home.js') %>"></script>
+		<script defer src="<%= @asset('/js/list.js') %>"></script>
 	<% end %>
 <% end %>
 <div class="media-container" id="media-container">
 	<% for m in @media: %>
 		<div class="item media placeholder">
 			<a title="TopGirls VIP - Picture <%= m.alias %>" href="/<%= m.alias %>">
-				<img class="media preview loaded" alt="TopGirls VIP - Picture <%= m.alias %>"
-					src="<%= m.preview %>"
+				<img class="media preview loaded" alt="TopGirls VIP - Picture <%= m.alias %>" src="<%= m.preview %>"
 					data-src="<%= m.path %>">
-				<!-- <img class="media" alt="TopGirls VIP - Picture <%= m.alias %>"
-					src="<%= m.path %>"
-					data-src="<%= m.path %>"> -->
 				<noscript>
 					<img src="<%= m.path %>" class="media" alt="TopGirls VIP - Picture <%= m.alias %>">
 				</noscript>
@@ -33,8 +29,8 @@
 <aside id="sidebar">
 	<div class="sidebar section">
 		<div class="text nav">
-			<a href="<%= @prev %>">&lt; Prev</a>
-			<a href="<%= @next %>">Next &gt;</a>
+			<a href="<%= @prev %>">&lt; Prev Page</a>
+			<a href="<%= @next %>">Next Page &gt;</a>
 		</div>
 	</div>
 	<div class="sidebar section ad">
@@ -51,9 +47,6 @@
 	<div class="sidebar section">
 		<% include 'partials/fb-comment' %>
 	</div>
-	<!-- <div class="sidebar section ref">
-		<a href="//propellerads.com/?rfd=TwG1"><img src="//promo.propellerads.com/468x60-popads_1.gif" alt="Propellerads"></a>
-	</div> -->
 	<div class="sidebar section ad">
 		<% if @config.production: %>
 			<% include 'partials/adsense-ad-sidebar' %>

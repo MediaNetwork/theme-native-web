@@ -17,10 +17,16 @@ module.exports = function(grunt) {
 		uglify: {
 			prod: {
 				files: {
-					'js/theme.min.js': [
+					'js/media.min.js': [
 						'js/jquery-1.12.4.min.js',
 						'js/spn.min.js',
-						'js/app.js'
+						'js/media.js'
+					],
+					'js/list.min.js': [
+						'js/jquery-1.12.4.min.js',
+						'js/spn.min.js',
+						'js/jquery.grid-a-licious.min.js',
+						'js/list.js'
 					],
 					'js/social.min.js': [
 						'js/social.js'
@@ -35,7 +41,8 @@ module.exports = function(grunt) {
 			scripts: {
 				files: [
 					'js/**/*.js',
-					'!js/theme.min.js',
+					'!js/media.min.js',
+					'!js/list.min.js',
 					'!js/social.min.js',
 					'!js/sw.min.js'
 				],
