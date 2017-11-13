@@ -18,11 +18,11 @@
 <div class="media-container" id="media-container">
 	<% for m in @media: %>
 		<div class="item media placeholder">
-			<a title="TopGirls VIP - Picture <%= m.alias %>" href="/<%= m.alias %>">
-				<img class="media preview loaded" alt="TopGirls VIP - Picture <%= m.alias %>" src="<%= m.preview %>"
+			<a title="TopGirls VIP - Picture <%= m.hash %>" href="/m/<%= m.hash %>">
+				<img class="media preview loaded" alt="TopGirls VIP - Picture <%= m.hash %>" src="<%= m.preview %>"
 					data-src="<%= m.path %>">
 				<noscript>
-					<img src="<%= m.path %>" class="media" alt="TopGirls VIP - Picture <%= m.alias %>">
+					<img src="<%= m.path %>" class="media" alt="TopGirls VIP - Picture <%= m.hash %>">
 				</noscript>
 			</a>
 			<div style="padding-bottom: <%= (m.height / m.width * 100) %>%;"></div>
