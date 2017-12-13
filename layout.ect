@@ -32,8 +32,8 @@
 		<link rel="stylesheet" href="<%= @asset('/css/responsive.css') %>">
 	<% end %>
 
-	<% if @settings['ci_header']: %>
-		<%- @settings['ci_header'] %>
+	<% if @setting['ci_header']: %>
+		<%- @setting['ci_header'] %>
 	<% end %>
 </head>
 <body>
@@ -60,8 +60,8 @@
 	<div id="fb-root"></div>
 	<% content 'scripts' %>
 
-	<% if @settings['ci_footer']: %>
-		<%- @settings['ci_footer'] %>
+	<% if @setting['ci_footer']: %>
+		<%- @setting['ci_footer'] %>
 	<% end %>
 </body>
 </html>
