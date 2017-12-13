@@ -1,4 +1,4 @@
-var CACHE_NAME = 'topgirls.vip-cache-v1';
+var CACHE_NAME = 'topgirls.vip-cache-v2';
 var ASSET_PREFIXES = [
 	'https://assets.topgirls.vip/',
 	'https://topgirls.vip/js',
