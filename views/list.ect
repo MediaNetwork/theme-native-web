@@ -1,0 +1,61 @@
+<% extend 'layout.ect' %>
+<% block 'title': %>
+	TopGirls VIP - Most beautiful and sexy girls
+<% end %>
+<% block 'fb-meta' : %>
+	<% include 'partials/list-fb-meta' %>
+<% end %>
+<% block 'scripts': %>
+	<% if @config.production: %>
+		<script defer src="<%= @asset('/js/list.min.js') %>"></script>
+	<% else: %>
+		<script defer src="<%= @asset('/js/jquery-1.12.4.min.js') %>"></script>
+		<script defer src="<%= @asset('/js/spn.min.js') %>"></script>
+		<script defer src="<%= @asset('/js/jquery.grid-a-licious.min.js') %>"></script>
+		<script defer src="<%= @asset('/js/list.js') %>"></script>
+	<% end %>
+<% end %>
+<div class="media-container" id="media-container">
+	<% for m in @media: %>
+		<div class="item media placeholder">
+			<a title="TopGirls VIP - Picture <%= m.hash %>" href="/m/<%= m.hash %>">
+				<img class="media preview loaded" alt="TopGirls VIP - Picture <%= m.hash %>" src="<%= m.preview %>"
+					data-src="<%= m.path %>">
+				<noscript>
+					<img src="<%= m.path %>" class="media" alt="TopGirls VIP - Picture <%= m.hash %>">
+				</noscript>
+			</a>
+			<div style="padding-bottom: <%= (m.height / m.width * 100) %>%;"></div>
+		</div>
+	<% end %>
+</div>
+<aside id="sidebar">
+	<div class="sidebar section">
+		<div class="text nav">
+			<a href="<%= @prev %>">&lt; Prev Page</a>
+			<a href="<%= @next %>">Next Page &gt;</a>
+		</div>
+	</div>
+	<div class="sidebar section ad">
+		<% if @config.production: %>
+			<% include 'partials/amazon-ad-sidebar' %>
+		<% end %>
+	</div>
+	<div class="sidebar section">
+		<% include 'partials/fb-page' %>
+	</div>
+	<div class="sidebar section">
+		<% include 'partials/fb-like-share' %>
+	</div>
+	<div class="sidebar section">
+		<% include 'partials/fb-comment' %>
+	</div>
+	<div class="sidebar section ad">
+		<% if @config.production: %>
+			<% include 'partials/adsense-ad-sidebar' %>
+		<% end %>
+	</div>
+	<div class="sidebar section">
+		<% include 'partials/links' %>
+	</div>
+</aside>
