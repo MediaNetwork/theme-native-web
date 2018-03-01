@@ -15,7 +15,7 @@ $(document).ready(function() {
 					var preview = $(item).find('.media.preview');
 					var width = $(item).outerWidth();
 					var src = preview.attr('data-src');
-					var optSrc = 'https://server1.mn-cdn.com/p/topgirls/media?width=' + width + '&url=' + src;
+					var optSrc = 'https://server1.mn-cdn.com/u/topgirls/media?w=' + width + '&url=' + src;
 
 					var media = $('<img />')
 						.addClass('media')
